@@ -1,0 +1,22 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    dotenv (0.11.1)
+      dotenv-deployment (~> 0.0.2)
+    dotenv-deployment (0.0.2)
+    echonest-ruby-api (0.7.0)
+      httparty
+      multi_json
+    httparty (0.13.1)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
+    json (1.8.1)
+    multi_json (1.10.1)
+    multi_xml (0.5.5)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  dotenv
+  echonest-ruby-api
