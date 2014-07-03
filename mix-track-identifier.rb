@@ -17,7 +17,7 @@ puts "Will attempt to split #{filename} into pieces for analysis..."
 filename_no_extension = filename.chomp(File.extname(filename))
 Dir.mkdir filename_no_extension + '_slices' unless File.exists?(filename_no_extension + '_slices') 
 
-#`sox #{filename} #{filename_no_extension + '_slices/' + filename_no_extension + '.mp3'} trim #{start_offset} #{slice_length} : newfile : restart`
+`sox #{filename} #{filename_no_extension + '_slices/' + filename_no_extension + '.mp3'} trim #{start_offset} #{slice_length} : newfile : restart`
 
 slices = Dir[filename_no_extension + '_slices' + "/*.mp3"]
 File.open(filename_no_extension + "_slice_list.txt", "w+") do |f|
