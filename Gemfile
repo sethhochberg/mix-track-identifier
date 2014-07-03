@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'echonest-ruby-api'
+gem 'httparty'
 gem 'dotenv'
 gem 'ruby-sox'
 gem 'json'
