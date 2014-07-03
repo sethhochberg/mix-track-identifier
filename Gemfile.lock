@@ -13,6 +13,7 @@ GEM
     json (1.8.1)
     multi_json (1.10.1)
     multi_xml (0.5.5)
+    ruby-sox (0.0.1)
 
 PLATFORMS
   ruby
@@ -20,3 +21,5 @@ PLATFORMS
 DEPENDENCIES
   dotenv
   echonest-ruby-api
+  json
+  ruby-sox
