@@ -10,7 +10,7 @@ puts "Specify a filename. Quiting." and exit unless filename
 puts "No Echonest API Key. Use a .env file or ensure this variable is set." and exit unless ENV['ECHONEST_API_KEY']
 
 start_offset = 0
-slice_length = 40
+slice_length = 120
 
 puts "Will attempt to split #{filename} into pieces for analysis..."
 
@@ -32,10 +32,13 @@ File.open(filename_no_extension + "_echoprint_data.json","w+") do |f|
 end
 
 echonest_json.each do |track|
-  query = "http://developer.echonest.com/api/v4/song/identify?api_key=#{ENV['ECHONEST_API_KEY']}&code=#{track['code']}"
+  #query = "http://developer.echonest.com/api/v4/song/identify?api_key=#{ENV['ECHONEST_API_KEY']}&code=#{track['code']}"
+  query = " http://localhost:8080/query?fp_code=#{track['code']}"
   response = HTTParty.get(query)
-  p response
-  p '-'*50
+  parsed = JSON.parse(response.body)
+  if parsed['match']
+    puts "Found #{parsed['track_id']}"
+  end
 end
 
 puts "Done."
